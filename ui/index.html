@@ -1,0 +1,339 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CWRA Rehabilitation Request Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.min.css"
+        crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/css/fileinput.min.css" media="all"
+        rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/js/plugins/buffer.min.js"
+        type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/js/plugins/filetype.min.js"
+        type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/js/plugins/piexif.min.js"
+        type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/js/plugins/sortable.min.js"
+        type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/js/fileinput.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Header -->
+
+    <!-- Form _-->
+    <div class="container px-5 my-5">
+        <form id="contactForm needs-validation" novalidate action="api/post" enctype="multipart/form-data" method="POST">
+            <div class="form-floating mb-3">
+                <input class="form-control" id="finderName" name="finderName" type="text" placeholder="Name" required />
+                <label for="name">Name</label>
+                <div class="invalid-feedback">Name is required.</div>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" id="finderPhone" name="finderPhone" type="text" placeholder="Phone Number" required />
+                <label for="phoneNumber">Phone Number</label>
+                <div class="invalid-feedback">Phone Number is required.</div>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" id="finderEmail" name="finderEmail" type="email" placeholder="Email Address" />
+                <label for="emailAddress">Email Address</label>
+                <div class="invalid-feedback">Email Address Email is not valid.
+                </div>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea class="form-control" id="description" name="description" type="text" placeholder="Details" style="height: 10rem;"
+                    required></textarea>
+                <label for="details">Details</label>
+                <div class="invalid-feedback">Details is required.</div>
+            </div>
+            <div class="form-floating mb-3">
+                <select class="form-select" id="finderTown" name="finderTown" aria-label="Town" required>
+                    <option value="">-- Select a Town --</option>
+                    <option value="Andover">Andover</option>
+                    <option value="Ansonia">Ansonia</option>
+                    <option value="Ashford">Ashford</option>
+                    <option value="Avon">Avon</option>
+                    <option value="Barkhamsted">Barkhamsted</option>
+                    <option value="Beacon Falls">Beacon Falls</option>
+                    <option value="Berlin">Berlin</option>
+                    <option value="Bethany">Bethany</option>
+                    <option value="Bethel">Bethel</option>
+                    <option value="Bethlehem">Bethlehem</option>
+                    <option value="Bloomfield">Bloomfield</option>
+                    <option value="Bolton">Bolton</option>
+                    <option value="Bozrah">Bozrah</option>
+                    <option value="Branford">Branford</option>
+                    <option value="Bridgeport">Bridgeport</option>
+                    <option value="Bridgewater">Bridgewater</option>
+                    <option value="Bristol">Bristol</option>
+                    <option value="Brookfield">Brookfield</option>
+                    <option value="Brooklyn">Brooklyn</option>
+                    <option value="Burlington">Burlington</option>
+                    <option value="Canaan">Canaan</option>
+                    <option value="Canterbury">Canterbury</option>
+                    <option value="Canton">Canton</option>
+                    <option value="Chaplin">Chaplin</option>
+                    <option value="Cheshire">Cheshire</option>
+                    <option value="Chester">Chester</option>
+                    <option value="Clinton">Clinton</option>
+                    <option value="Colchester">Colchester</option>
+                    <option value="Colebrook">Colebrook</option>
+                    <option value="Columbia">Columbia</option>
+                    <option value="Cornwall">Cornwall</option>
+                    <option value="Coventry">Coventry</option>
+                    <option value="Cromwell">Cromwell</option>
+                    <option value="Danbury">Danbury</option>
+                    <option value="Darien">Darien</option>
+                    <option value="Deep River">Deep River</option>
+                    <option value="Derby">Derby</option>
+                    <option value="Durham">Durham</option>
+                    <option value="East Granby">East Granby</option>
+                    <option value="East Haddam">East Haddam</option>
+                    <option value="East Hampton">East Hampton</option>
+                    <option value="East Hartford">East Hartford</option>
+                    <option value="East Haven">East Haven</option>
+                    <option value="East Lyme">East Lyme</option>
+                    <option value="East Windsor">East Windsor</option>
+                    <option value="Eastford">Eastford</option>
+                    <option value="Easton">Easton</option>
+                    <option value="Ellington">Ellington</option>
+                    <option value="Enfield">Enfield</option>
+                    <option value="Essex">Essex</option>
+                    <option value="Fairfield">Fairfield</option>
+                    <option value="Farmington">Farmington</option>
+                    <option value="Franklin">Franklin</option>
+                    <option value="Glastonbury">Glastonbury</option>
+                    <option value="Goshen">Goshen</option>
+                    <option value="Granby">Granby</option>
+                    <option value="Greenwich">Greenwich</option>
+                    <option value="Griswold">Griswold</option>
+                    <option value="Groton">Groton</option>
+                    <option value="Guilford">Guilford</option>
+                    <option value="Haddam">Haddam</option>
+                    <option value="Hamden">Hamden</option>
+                    <option value="Hampton">Hampton</option>
+                    <option value="Hartford">Hartford</option>
+                    <option value="Hartland">Hartland</option>
+                    <option value="Harwinton">Harwinton</option>
+                    <option value="Hebron">Hebron</option>
+                    <option value="Kent">Kent</option>
+                    <option value="Killingly">Killingly</option>
+                    <option value="Killingworth">Killingworth</option>
+                    <option value="Lebanon">Lebanon</option>
+                    <option value="Ledyard">Ledyard</option>
+                    <option value="Lisbon">Lisbon</option>
+                    <option value="Litchfield">Litchfield</option>
+                    <option value="Lyme">Lyme</option>
+                    <option value="Madison">Madison</option>
+                    <option value="Manchester">Manchester</option>
+                    <option value="Mansfield">Mansfield</option>
+                    <option value="Marlborough">Marlborough</option>
+                    <option value="Meriden">Meriden</option>
+                    <option value="Middlebury">Middlebury</option>
+                    <option value="Middlefield">Middlefield</option>
+                    <option value="Middletown">Middletown</option>
+                    <option value="Milford">Milford</option>
+                    <option value="Monroe">Monroe</option>
+                    <option value="Montville">Montville</option>
+                    <option value="Morris">Morris</option>
+                    <option value="Naugatuck">Naugatuck</option>
+                    <option value="Newington">Newington</option>
+                    <option value="Newtown">Newtown</option>
+                    <option value="New Britain">New Britain</option>
+                    <option value="New Canaan">New Canaan</option>
+                    <option value="New Fairfield">New Fairfield</option>
+                    <option value="New Hartford">New Hartford</option>
+                    <option value="New Haven">New Haven</option>
+                    <option value="New London">New London</option>
+                    <option value="New Milford">New Milford</option>
+                    <option value="Norfolk">Norfolk</option>
+                    <option value="North Branford">North Branford</option>
+                    <option value="North Canaan">North Canaan</option>
+                    <option value="North Haven">North Haven</option>
+                    <option value="North Stonington">North Stonington</option>
+                    <option value="Norwalk">Norwalk</option>
+                    <option value="Norwich">Norwich</option>
+                    <option value="Old Lyme">Old Lyme</option>
+                    <option value="Old Saybrook">Old Saybrook</option>
+                    <option value="Orange">Orange</option>
+                    <option value="Oxford">Oxford</option>
+                    <option value="Plainfield">Plainfield</option>
+                    <option value="Plainville">Plainville</option>
+                    <option value="Plymouth">Plymouth</option>
+                    <option value="Pomfret">Pomfret</option>
+                    <option value="Portland">Portland</option>
+                    <option value="Preston">Preston</option>
+                    <option value="Prospect">Prospect</option>
+                    <option value="Putnam">Putnam</option>
+                    <option value="Redding">Redding</option>
+                    <option value="Ridgefield">Ridgefield</option>
+                    <option value="Rocky Hill">Rocky Hill</option>
+                    <option value="Roxbury">Roxbury</option>
+                    <option value="Salem">Salem</option>
+                    <option value="Salisbury">Salisbury</option>
+                    <option value="Scotland">Scotland</option>
+                    <option value="Seymour">Seymour</option>
+                    <option value="Sharon">Sharon</option>
+                    <option value="Shelton">Shelton</option>
+                    <option value="Sherman">Sherman</option>
+                    <option value="Simsbury">Simsbury</option>
+                    <option value="Somers">Somers</option>
+                    <option value="South Windsor">South Windsor</option>
+                    <option value="Southbury">Southbury</option>
+                    <option value="Southington">Southington</option>
+                    <option value="Sprague">Sprague</option>
+                    <option value="Stafford">Stafford</option>
+                    <option value="Stamford">Stamford</option>
+                    <option value="Sterling">Sterling</option>
+                    <option value="Stonington">Stonington</option>
+                    <option value="Stratford">Stratford</option>
+                    <option value="Suffield">Suffield</option>
+                    <option value="Thomaston">Thomaston</option>
+                    <option value="Thompson">Thompson</option>
+                    <option value="Tolland">Tolland</option>
+                    <option value="Torrington">Torrington</option>
+                    <option value="Trumbull">Trumbull</option>
+                    <option value="Union">Union</option>
+                    <option value="Vernon">Vernon</option>
+                    <option value="Voluntown">Voluntown</option>
+                    <option value="Wallingford">Wallingford</option>
+                    <option value="Warren">Warren</option>
+                    <option value="Washington">Washington</option>
+                    <option value="Waterbury">Waterbury</option>
+                    <option value="Waterford">Waterford</option>
+                    <option value="Watertown">Watertown</option>
+                    <option value="West Hartford">West Hartford</option>
+                    <option value="West Haven">West Haven</option>
+                    <option value="Westbrook">Westbrook</option>
+                    <option value="Weston">Weston</option>
+                    <option value="Westport">Westport</option>
+                    <option value="Wethersfield">Wethersfield</option>
+                    <option value="Willington">Willington</option>
+                    <option value="Wilton">Wilton</option>
+                    <option value="Winchester">Winchester</option>
+                    <option value="Windham">Windham</option>
+                    <option value="Windsor">Windsor</option>
+                    <option value="Windsor Locks">Windsor Locks</option>
+                    <option value="Wolcott">Wolcott</option>
+                    <option value="Woodbridge">Woodbridge</option>
+                    <option value="Woodbury">Woodbury</option>
+                    <option value="Woodstock">Woodstock</option>
+                </select>
+                <label for="town">Town</label>
+            </div>
+            <div class="form-floating mb-3">
+                <select class="form-select" id="species" name="species" aria-label="Species" required>
+                    <option value="">-- Select a Species --</option>
+                    <option value="Bats">Bats</option>
+                    <option value="Birds: Ducks and Geese">Birds: Ducks and Geese</option>
+                    <option value="Birds: Hawks and Owls">Birds: Hawks and Owls</option>
+                    <option value="Birds: Raptors">Birds: Raptors</option>
+                    <option value="Birds: Small">Birds: Small</option>
+                    <option value="Birds: Other">Birds: Other</option>
+                    <option value="Deer">Deer</option>
+                    <option value="Foxes">Foxes</option>
+                    <option value="Opossums">Opossums</option>
+                    <option value="Raccoons">Raccoons</option>
+                    <option value="Rabbits">Rabbits</option>
+                    <option value="Reptiles and Amphibians">Reptiles and Amphibians</option>
+                    <option value="Skunks">Skunks</option>
+                </select>
+                <label for="species">Species</label>
+            </div>
+            <div class="form-floating mb-3">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        Image(s)
+                        (Attach multiple images.)
+                    </label>
+                    <div class="col-sm-9">
+                        <span class="btn btn-default btn-file">
+                            <input id="input-id" name="file[]" type="file" class="file" data-preview-file-type="text" multiple>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-floating mb-3">
+                <select class="form-select" id="numberOfAnimals" name="numberOfAnimals" aria-label="Number of Animals" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                </select>
+                <label for="numberOfAnimals">Number of Animals</label>
+            </div>
+            <div class="mb-3">
+                <label class="form-label d-block"></label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="willingToTransport" type="checkbox" name="willingToTransport"
+                        data-sb-validations="" />
+                    <label class="form-check-label" for="willingToTransport">Willing to Transport</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="animalIsContained" type="checkbox" name="animalIsContained"
+                        data-sb-validations="" />
+                    <label class="form-check-label" for="animalIsContained">Animal is Contained</label>
+                </div>
+            </div>
+            <div class="d-none" id="submitSuccessMessage">
+                <div class="text-center mb-3">
+                    <div class="fw-bolder">Form submission successful!</div>
+                </div>
+            </div>
+            <div class="d-none" id="submitErrorMessage">
+                <div class="text-center text-danger mb-3">Error submitting!</div>
+            </div>
+            <div class="d-grid">
+                <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Load bootstrap dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js"
+        integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D"
+        crossorigin="anonymous"></script>
+    <script>
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-fileinput@5.2.0/js/fileinput.min.js" integrity="sha384-1q6b7j3d 
+
+</body>
+
+</html>
