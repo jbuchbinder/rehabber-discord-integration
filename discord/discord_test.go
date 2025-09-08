@@ -4,13 +4,15 @@ import (
 	"os"
 	"testing"
 
+	"github.com/alexsasharegan/dotenv"
 	"github.com/bwmarrin/discordgo"
 	"github.com/jbuchbinder/shims"
 )
 
 func Test_Discord(t *testing.T) {
+	dotenv.Load()
 	d := &DiscordOutput{}
-	err := d.Init(token)
+	err := d.Init(os.Getenv("DISCORD_TOKEN"))
 	if err != nil {
 		t.Fatalf("Failed to initialize Discord: %v", err)
 	}

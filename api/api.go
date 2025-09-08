@@ -24,6 +24,15 @@ func InitApi(e *echo.Echo, fs embed.FS, embedded bool) {
 	// Register the POST route for form submission
 	e.POST("/api/post", PostForm)
 
+	// Recaptcha
+	e.GET("/api/recaptcha", func(c echo.Context) error {
+		log.Printf("INFO: Serving recaptcha")
+		return c.JSON(http.StatusOK, echo.Map{
+			"siteKey": os.Getenv("RECAPTCHA_SITE_KEY"),
+		})
+	})
+	// Register the GET route for serving the UI
+
 	if embedded {
 		log.Printf("INFO: Serving embedded UI files")
 		e.StaticFS("/", fs)
@@ -150,13 +159,25 @@ func PostForm(c echo.Context) error {
 	}
 
 	d := &discord.DiscordOutput{}
-	err = d.InitExternal()
+	err = d.Init(os.Getenv("DISCORD_TOKEN"))
 	if err != nil {
 		log.Printf("ERROR: Failed to initialize Discord: %v", err)
 	}
 
+	channelID := discord.GetDiscordChannelID(species)
+	if channelID == "" {
+		log.Printf("ERROR: Invalid species '%s' provided", species)
+		return c.JSON(http.StatusBadRequest, echo.Map{
+			"error": "Invalid species provided",
+		})
+	}
+
 	// TODO:FIXME: routing logic
-	d.SendMessage("1372947919757643807", m) // Initialize with a dummy token
+	d.SendMessage(channelID, m) // Initialize with a dummy token
+
+	for _, rf := range removeFiles {
+		os.Remove(rf)
+	}
 
 	return c.JSON(http.StatusOK, echo.Map{
 		"name":   finderName,

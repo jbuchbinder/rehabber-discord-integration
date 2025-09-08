@@ -1,5 +1,7 @@
 package discord
 
+import "strings"
+
 var (
 	DiscordChannelMap = map[string]string{
 		"bats":                    "1372949251750887575",
@@ -17,3 +19,10 @@ var (
 		"skunks":                  "1372948609284444363",
 	}
 )
+
+func GetDiscordChannelID(name string) string {
+	if id, ok := DiscordChannelMap[strings.ToLower(name)]; ok {
+		return id
+	}
+	return ""
+}

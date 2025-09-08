@@ -2,3 +2,4 @@ rehabber-discord-integration
 *~
 go.sum
 go.work.sum
+.env

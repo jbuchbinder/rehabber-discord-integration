@@ -38,10 +38,6 @@ func (dm DiscordMessage) Transport() string {
 	return "not willing to transport"
 }
 
-func (d *DiscordOutput) InitExternal() error {
-	return d.Init(token)
-}
-
 func (d *DiscordOutput) Init(token string) error {
 	var err error
 	if d.discordInit {
