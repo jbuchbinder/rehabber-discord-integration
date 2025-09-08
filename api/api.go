@@ -10,6 +10,7 @@ import (
 	"strconv"
 
 	"github.com/bwmarrin/discordgo"
+	"github.com/gabriel-vasile/mimetype"
 	"github.com/jbuchbinder/rehabber-discord-integration/discord"
 	"github.com/jbuchbinder/shims"
 	"github.com/labstack/echo/v4"
@@ -140,16 +141,18 @@ func PostForm(c echo.Context) error {
 			log.Println(err.Error())
 			return err
 		}
-		defer dst.Close()
 
 		// Copy
 		if _, err = io.Copy(dst, src); err != nil {
+			dst.Close()
 			return err
 		}
 
+		mtype, _ := mimetype.DetectFile(uploadedFilePath)
+
 		m.Files = append(m.Files, &discordgo.File{
 			Name:        file.Filename,
-			ContentType: "image/jpeg",
+			ContentType: mtype.String(),
 			Reader:      shims.SingleValueDiscardError(os.Open(uploadedFilePath)),
 		},
 		)
