@@ -17,6 +17,7 @@ require (
 )
 
 require (
+	github.com/gabriel-vasile/mimetype v1.4.10 // indirect
 	github.com/gorilla/websocket v1.5.3 // indirect
 	github.com/jbuchbinder/rehabber-discord-integration/discord v0.0.0-00010101000000-000000000000 // indirect
 	github.com/labstack/gommon v0.4.2 // indirect

@@ -1,0 +1,14 @@
+version: '3.5'
+
+services:
+  rehabber-discord-integration:
+    container_name: rehabber-discord-integration
+    image: jbuchbinder/rehabber-discord-integration
+    restart: unless-stopped
+    volumes:
+      - .env:/.env:ro
+    env_file:
+      - .env
+    ports:
+      - 1323:1323
+
