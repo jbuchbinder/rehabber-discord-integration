@@ -7,9 +7,9 @@ replace github.com/jbuchbinder/rehabber-discord-integration/discord => ../discor
 require (
 	github.com/bwmarrin/discordgo v0.29.0
 	github.com/gabriel-vasile/mimetype v1.4.12
-	github.com/jbuchbinder/rehabber-discord-integration/discord v0.0.0-20251029164615-efb600e47af6
+	github.com/jbuchbinder/rehabber-discord-integration/discord v0.0.0-20251213183533-dbffdd6ca291
 	github.com/jbuchbinder/shims v0.0.0-20251029164657-6c80f5d6bc01
-	github.com/labstack/echo/v4 v4.14.0
+	github.com/labstack/echo/v4 v4.15.0
 )
 
 require (
@@ -20,8 +20,8 @@ require (
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasttemplate v1.2.2 // indirect
-	golang.org/x/crypto v0.46.0 // indirect
-	golang.org/x/net v0.48.0 // indirect
-	golang.org/x/sys v0.39.0 // indirect
-	golang.org/x/text v0.32.0 // indirect
+	golang.org/x/crypto v0.47.0 // indirect
+	golang.org/x/net v0.49.0 // indirect
+	golang.org/x/sys v0.40.0 // indirect
+	golang.org/x/text v0.33.0 // indirect
 )
